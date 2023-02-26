@@ -20,28 +20,29 @@ public class Pessoa {
 	@Column(name = "name", length = 100)
 	private String name;
 	
-	@Column(name = "cpf", length = 11)
-	private String cpf;
-	
-	@Column(name = "name", length = 50)
+	@Column(name = "email", length = 50)
 	private String email;
 	
-	@Column(name = "name", length = 11)
+	@Column(name = "phone", length = 11)
 	private String phone;
 	
+	/*Column
+    @NotBlank(message = "Campo obrigatório!")
+    private String login;
+
 	@Column
 	@NotBlank(message = "Campo obrigatório")
-	private String password;
+	private String password;*/
 	
-	public Pessoa() {
-	}
+	@Column(name = "papel", length = 11)
+	private String papel;
 
-	public Pessoa(Integer id, String name, String cpf, String email, String phone) {
+	public Pessoa(Integer id, String name, String email, String phone, String papel) {
 		this.id = id;
 		this.name = name;
-		this.cpf = cpf;
 		this.email = email;
 		this.phone = phone;
+		this.papel = papel;
 	}
 
 	public String getEmail() {
@@ -68,14 +69,6 @@ public class Pessoa {
 		this.name = name;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -84,22 +77,20 @@ public class Pessoa {
 		this.phone = phone;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPapel() {
+		return papel;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPapel(String papel) {
+		this.papel = papel;
 	}
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + 
-				", name=" + name + 
-				", cpf=" + cpf + 
-				", phone=" + phone + 
-				", password=" + password
-				+ "]";
+		return "Pessoa [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone
+				+ ", papel=" + papel + "]";
 	}
+	
+	
 	
 }
